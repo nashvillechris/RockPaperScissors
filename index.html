@@ -9,14 +9,15 @@
 <script>
 
 function computerPlay() {
-  var choices = ['Rock', 'Paper', 'Scissors']; 
+  var choices = ['ROCK', 'PAPER', 'SCISSORS']; 
    return choices[Math.floor(Math.random()*choices.length)];
+   computerPlay
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (computerSelection == 'Rock') {
+    if (computerSelection == playerSelection) {
         greeting = 'You tie!';
-  } else if (computerSelection == 'Paper') {
+  } else if (computerSelection == 'PAPER') {
         greeting = 'Paper beats Rock, You Lose!';
   } else {
             greeting = 'Rock beats Scissors, You Win!';
@@ -24,9 +25,9 @@ function playRound(playerSelection, computerSelection) {
     return greeting;    
 }
 
-const playerSelection = 'Rock'
+const playerSelection = 'roCK'
 const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))
+console.log(playRound(playerSelection.toUpperCase(), computerSelection))
 
 </script>
 
