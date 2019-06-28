@@ -9,60 +9,60 @@
 <script>
 
 function computerPlay() {
-  var choices = ["rock", "paper", "scissors"]; 
+  var choices = ["rock", "paper", "scissors"];
    return choices[Math.floor(Math.random()*choices.length)];
    computerPlay
 }
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === "rock") {
-        if (computerSelection === "paper") {
-            computerScore++;
-            return lose;
-  } else if (computerSelection == "rock") {
-            return tie; 
+      if (computerSelection === "paper") {
+        computerScore++;
+        return lose;
+  } else if (computerSelection === "rock") {
+      return tie; 
   } else {
-            userScore++;
-            return win;
+      userScore++;
+      return win;
+      }
+}
+
+    if (playerSelection.toLowerCase() === "paper") {
+      if (computerSelection === "scissors") {
+        computerscore++;
+        return lose;
+  } else if (computerSelection === "paper") {
+        return tie; 
+  } else {
+        userScore++;
+        return win;
         }  
 }
 
-if (playerSelection.toLowerCase() === "paper") {
-        if (computerSelection === "scissors") {
-            computerscore++;
-            return lose;
-  } else if (computerSelection == "paper") {
-            return tie; 
+  if (playerSelection.toLowerCase() === "scissors") {
+    if (computerSelection === "rock") {
+      computerScore++;
+      return lose;
+  } else if (computerSelection === "scissors") {
+      return tie;
   } else {
-            userScore++;
-            return win;
-        }  
-}
-
-if (playerSelection.toLowerCase() === "scissors") {
-        if (computerSelection === "rock") {
-            computerScore++;
-            return lose;
-  } else if (computerSelection == "scissors") {
-            return tie; 
-  } else {
-            userScore++;
-            return win;
+      userScore++;
+      return win;
         }  
     }
 }
 
 let userScore = parseInt(0);
 let computerScore = parseInt(0);
-let win = "You Win"
-let lose = "You Lose"
-let tie = "It is a tie"
+let win = "You Win";
+let lose = "You Lose";
+let tie = "It is a tie";
 
 var i = 0;
 const play = () => {
-  let playerSelection = prompt("Pick a Move");
-  const computerSelection = computerPlay()
-  console.log(playRound(playerSelection, computerSelection))
+  let playerSelection = window.prompt("Pick a Move");
+  const computerSelection = computerPlay();
+  console.log(playRound(playerSelection, computerSelection));
   console.log("Your Score = " + userScore);
   console.log("Computer Score = " + computerScore);
   i++;
