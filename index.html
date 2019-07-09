@@ -8,10 +8,16 @@
 
 <script>
 
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
+let win = "You Win";
+let lose = "You Lose";
+let tie = "It is a tie";
+
+
 function computerPlay() {
   var choices = ["rock", "paper", "scissors"];
    return choices[Math.floor(Math.random()*choices.length)];
-   computerPlay
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -52,12 +58,6 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let userScore = parseInt(0);
-let computerScore = parseInt(0);
-let win = "You Win";
-let lose = "You Lose";
-let tie = "It is a tie";
-
 var i = 0;
 const play = () => {
   let playerSelection = window.prompt("Pick a Move");
@@ -69,12 +69,11 @@ const play = () => {
   if (i !== 5) {
       play();
   } else {
-      alert("Game Over=> User("+userScore+") vs Computer("+computerScore+")");
+      alert("Game Over: User("+userScore+") vs Computer("+computerScore+")");
   }
 }
 
 play();
-
 
 
 </script>
